@@ -1,11 +1,13 @@
 import { CronJob } from 'cron'
-import puppeteer from 'puppeteer-core'
+import puppeteer, { Browser } from 'puppeteer-core'
 import { checkForPosts } from './checkForPosts'
 import { postToLinkedIn } from './posting/linkedin'
 
+let browser: Browser
+
 const start = async (): Promise<void> => {
     // setup puppeteer
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
         headless: false
     })
 
@@ -29,6 +31,10 @@ const start = async (): Promise<void> => {
     zacsPants.start()
 }
 
+process.on('exit', () => browser.close())
+process.on('SIGINT', () => browser.close())
 start().catch((err) => {
     console.error('An error occured: ', err)
+    browser.close()
 })
+
