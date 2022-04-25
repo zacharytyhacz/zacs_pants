@@ -44,3 +44,30 @@ vim posts.json
 # Start the app.
 yarn start
 ```
+
+## `posts.json` schema
+```json
+[
+    {
+        "datesToPost": [
+            "2022-04-24T20:11:10.193Z"
+        ],
+        "description": "the description of this post.",
+        "hashtags": [
+            "#help",
+            "#ayo",
+            "#bruh"
+        ],
+        "mediaSource": "nameOfFileInMediaFolder.jpg",
+        "meta": {
+            "thumbnail": "nameOfFileInMediaFolder.jpg", // e.g. for youtube videos
+            "private": false
+        },
+        "platforms": [
+            "linkedin",
+            // more coming soon
+        ],
+        "title": "title for this post. linkedin doesn't have titles, but other social medias do ( like youtube )"
+    }
+]
+```
