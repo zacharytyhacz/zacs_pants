@@ -11,24 +11,26 @@ const start = async (): Promise<void> => {
         headless: false
     })
 
-    const everyMinute = '0 * * * * *'
-    const zacsPants = new CronJob(everyMinute, () => {
-        const postsReadyToBePostedNow = checkForPosts()
+    // const everyMinute = '0 * * * * *'
+    // const zacsPants = new CronJob(everyMinute, () => {
 
-        if (!postsReadyToBePostedNow.length) {
-            return
+    const postsReadyToBePostedNow = checkForPosts()
+
+    if (!postsReadyToBePostedNow.length) {
+        return
+    }
+
+    postsReadyToBePostedNow.map((readyPost) => {
+        const { platforms, ...post } = readyPost
+
+        if (platforms.includes('linkedin')) {
+            postToLinkedIn(browser, post)
         }
-
-        postsReadyToBePostedNow.map((readyPost) => {
-            const { platforms, ...post } = readyPost
-
-            if (platforms.includes('linkedin')) {
-                postToLinkedIn(browser, post)
-            }
-        })
     })
 
-    zacsPants.start()
+    // })
+
+    // zacsPants.start()
 }
 
 process.on('exit', () => browser.close())
