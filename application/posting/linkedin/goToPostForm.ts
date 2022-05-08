@@ -7,4 +7,5 @@ export const goToPostForm = async (
     await page.waitForNavigation()
     await pause(5.0)
     await page.click('#ember33')
+    await pause(3.0)
 }
