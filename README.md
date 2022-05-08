@@ -32,6 +32,9 @@ cd zacs_pants/application
 # install the dependencies
 yarn install
 
+# Install the chromium browser for puppeteer
+yarn setup
+
 # Setup your credentials
 cp settings.json.example settings.json
 vim settings.json
