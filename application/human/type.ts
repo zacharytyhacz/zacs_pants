@@ -7,7 +7,7 @@ export const typeLikeHuman = async (page: Page, selector: string, text: string):
   await page.focus(selector)
 
   for (let i = 0; i < text.length; i++ ){
-    await pause(0.4)
+    await pause(0.25)
     await page.type(selector, text[i])
   }
 }
