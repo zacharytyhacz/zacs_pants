@@ -7,6 +7,9 @@ export type Post = {
     mediaSource?: string
     platforms?: string[]
     title: string
+    meta?: {
+	    subreddits: string[]
+    }
 }
 
 export const checkForPosts = ():Post[] => {

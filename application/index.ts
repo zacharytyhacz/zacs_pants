@@ -2,6 +2,7 @@ import { CronJob } from 'cron'
 import puppeteer, { Browser } from 'puppeteer-core'
 import { checkForPosts } from './checkForPosts'
 import { postToLinkedIn } from './posting/linkedin'
+import { postToReddit } from './posting/reddit'
 
 let browser: Browser
 
@@ -20,13 +21,25 @@ const start = async (): Promise<void> => {
         return
     }
 
-    postsReadyToBePostedNow.map((readyPost) => {
+    await Promise.all(postsReadyToBePostedNow.map((readyPost) => {
         const { platforms, ...post } = readyPost
 
+        let postHandlers = []
+
         if (platforms.includes('linkedin')) {
-            postToLinkedIn(browser, post)
+            postHandlers.push(
+                postToLinkedIn(browser, post)
+            )
         }
-    })
+
+        if (platforms.includes('reddit')) {
+            postHandlers.push(
+                postToReddit(browser, post)
+            )
+        }
+
+        return Promise.all(postHandlers)
+    }))
 
     // })
 

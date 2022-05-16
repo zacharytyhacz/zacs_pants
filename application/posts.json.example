@@ -10,10 +10,14 @@
         "mediaSource": "nameOfFileInMediaFolder.jpg",
         "meta": {
             "thumbnail": "nameOfFileInMediaFolder.jpg",
-            "private": false
+            "private": false,
+	    "subreddits": [
+	    	"r/duckduckgo"
+	    ]
         },
         "platforms": [
-            "linkedin"
+            "linkedin",
+	    "reddit"
         ],
         "title": "title for this post. linkedin doesn't have titles, but other social medias do ( like youtube )"
     }

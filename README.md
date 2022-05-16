@@ -8,10 +8,10 @@
 
 ## To-Do List
 
-- [ ] Posting to LinkedIn ( WIP )
+- [x] Posting to LinkedIn
+- [ ] Posting to Reddit ( WIP )
 - [ ] Add cronjob and check for posts that are scheduled
 - [ ] Prepare frontend for desktop app with tauri ( Chakra UI )
-- [ ] Posting to Reddit
 - [ ] Posting to Instagram
 - [ ] Posting to Instagram Stories
 - [ ] Posting to Youtube
