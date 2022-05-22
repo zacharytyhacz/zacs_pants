@@ -13,6 +13,7 @@
 - [ ] Add cronjob and check for posts that are scheduled
 - [ ] Prepare frontend for desktop app with tauri ( Chakra UI )
 - [ ] Posting to Instagram
+- [ ] Add support for multiple media files
 - [ ] Posting to Instagram Stories
 - [ ] Posting to Youtube
 - [ ] Posting to Youtube Shorts
