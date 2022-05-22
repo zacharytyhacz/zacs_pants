@@ -18,7 +18,6 @@ export const postToReddit = async (
     let subredditIndex = 0
 
     while (subredditIndex != subreddits.length) {
-
         const subreddit = subreddits[subredditIndex]
 
         await page.goto(`https://www.reddit.com/${subreddit}/submit`)
@@ -74,6 +73,6 @@ export const postToReddit = async (
         await pause(1.0)
         await postButton.click()
 
-        break
+        subredditIndex += 1
     }
 }
