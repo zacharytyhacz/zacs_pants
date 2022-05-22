@@ -1,15 +1,22 @@
-![j4gD4fw](https://user-images.githubusercontent.com/38140593/165675480-d4dc1970-6bf3-4f6e-ad34-68f0c8789186.jpg)
-
 # Zac's Pants
 ## An automated social media posting app
 
+![j4gD4fw](https://user-images.githubusercontent.com/38140593/165675480-d4dc1970-6bf3-4f6e-ad34-68f0c8789186.jpg)
+
 - Puppeteer.js
 - Typescript
+- No API tokens, subscriptions, or sign up
+- Free and Open Source
+- Simple JSON object format for posts
+- Create one post object, post to everywhere in one place.
+- Runs only on your computer; `zacs_pants`is not a centralized service or database.
+- _Hopefully_ an awesome scheduler. Uses your computer's clock.
 
 ## To-Do List
 
 - [x] Posting to LinkedIn
-- [ ] Posting to Reddit ( WIP )
+- [x] Posting simple title + text to Reddit
+- [ ] Posting images + video to Reddit ( WIP )
 - [ ] Add cronjob and check for posts that are scheduled
 - [ ] Prepare frontend for desktop app with tauri ( Chakra UI )
 - [ ] Posting to Instagram
