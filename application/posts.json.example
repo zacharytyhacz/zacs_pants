@@ -11,9 +11,9 @@
         "meta": {
             "thumbnail": "nameOfFileInMediaFolder.jpg",
             "private": false,
-	    "subreddits": [
-	    	"r/duckduckgo"
-	    ]
+            "subreddits": [
+                "r/duckduckgo"
+            ]
         },
         "platforms": [
             "linkedin",

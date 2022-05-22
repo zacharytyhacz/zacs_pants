@@ -57,23 +57,22 @@ yarn start
 ```json
 [
     {
-        "datesToPost": [
-            "2022-04-24T20:11:10.193Z"
-        ],
+        "datesToPost": ["2022-04-24T20:11:10.193Z"], // doesn't work yet
         "description": "the description of this post.",
         "hashtags": [
             "#help",
             "#ayo",
             "#bruh"
         ],
-        "mediaSource": "nameOfFileInMediaFolder.jpg",
+        "mediaSource": "nameOfFileInMediaFolder.jpg", // file name in application/media/ folder
         "meta": {
-            "thumbnail": "nameOfFileInMediaFolder.jpg", // e.g. for youtube videos
-            "private": false
+            "subreddits": [ // for reddit posts
+                "r/duckduckgo"
+            ]
         },
         "platforms": [
             "linkedin",
-            // more coming soon
+	        "reddit" // you can now post only text/desription to reddit!
         ],
         "title": "title for this post. linkedin doesn't have titles, but other social medias do ( like youtube )"
     }
