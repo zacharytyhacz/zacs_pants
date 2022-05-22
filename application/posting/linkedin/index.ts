@@ -4,6 +4,7 @@ import { goToPostForm } from './goToPostForm'
 import { Post } from '../../checkForPosts'
 import { typeLikeHuman } from '../../human/type'
 import { pause } from '../../human/pause'
+import { getMediaFilePath } from '../../utils/getMediaFile'
 
 export const postToLinkedIn = async (
     browser: Browser,
@@ -41,7 +42,9 @@ export const postToLinkedIn = async (
 
         const fileUploadSelector = 'label[for=image-sharing-detour-container__file-input]'
 
-        const pathToMediaSourceFile = `${__dirname}/../../../media/${post.mediaSource}`
+        // const pathToMediaSourceFile = `${__dirname}/../../../media/${post.mediaSource}`
+        const pathToMediaSourceFile = getMediaFilePath(post.mediaSource)
+
         console.log({ pathToMediaSourceFile })
 
         const [fileInput] = await Promise.all([
